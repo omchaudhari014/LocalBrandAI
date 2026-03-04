@@ -1,0 +1,79 @@
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║              ⚡ QUICK INSTALL REFERENCE ⚡                   ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+🎯 YOUR MISSION: Install Node.js
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣  DOWNLOAD
+    → https://nodejs.org/
+    → Click GREEN "LTS" button (left side)
+    → File: node-v20.x.x-x64.msi
+
+2️⃣  INSTALL
+    → Double-click downloaded file
+    → Click "Next" through wizard
+    → ✅ Check "Add to PATH"
+    → Click "Install"
+    → Click "Finish"
+
+3️⃣  RESTART
+    → Restart your computer
+    → This is REQUIRED!
+
+4️⃣  VERIFY
+    → Open PowerShell
+    → Type: node --version
+    → Should see: v20.x.x
+
+5️⃣  INSTALL DEPENDENCIES
+    → cd localbrandai-backend
+    → npm install express cors mongoose
+
+6️⃣  RUN SERVER
+    → node server-simple.js
+    → Should see: "Server running on port 5000"
+
+7️⃣  OPEN APP
+    → Open: index-with-api.html
+    → Start generating content!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⏱️  TIME REQUIRED: ~10 minutes
+    - Download: 2 min
+    - Install: 2 min
+    - Restart: 2 min
+    - Setup: 2 min
+    - Test: 2 min
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 CHECKLIST:
+    □ Downloaded Node.js LTS
+    □ Installed (checked "Add to PATH")
+    □ Restarted computer
+    □ Verified: node --version works
+    □ Installed: npm install express cors mongoose
+    □ Started: node server-simple.js
+    □ Tested: index-with-api.html
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🆘 IF STUCK:
+    - Read: INSTALL_NODEJS.md (detailed guide)
+    - Read: NODEJS_INSTALL_STEPS.txt (step-by-step)
+    - Check: Node.js website is open in browser
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 AFTER INSTALLATION:
+    Your LocalBrandAI will be fully functional!
+    - Backend API running
+    - Database features available
+    - Real-time content generation
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

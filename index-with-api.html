@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalBrandAI - AI Marketing Assistant</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function App() {
+            const [businessType, setBusinessType] = useState("");
+            const [offer, setOffer] = useState("");
+            const [language, setLanguage] = useState("Hindi");
+            const [result, setResult] = useState("");
+            const [loading, setLoading] = useState(false);
+            const [error, setError] = useState("");
+
+            const handleGenerate = async () => {
+                // Validate inputs
+                if (!businessType || !offer) {
+                    setError("Please fill in all fields!");
+                    return;
+                }
+
+                setLoading(true);
+                setError("");
+                setResult("");
+
+                try {
+                    // Call the backend API
+                    const response = await fetch('http://localhost:5000/generate', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            businessType,
+                            offer,
+                            language
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Failed to generate content');
+                    }
+
+                    const data = await response.json();
+                    setResult(data.message);
+                } catch (err) {
+                    console.error('Error:', err);
+                    setError('Failed to connect to server. Make sure the backend is running on port 5000.');
+                } finally {
+                    setLoading(false);
+                }
+            };
+
+            return (
+                <div style={styles.container}>
+                    <h1 style={styles.title}>🚀 LocalBrandAI</h1>
+                    <p style={styles.subtitle}>AI Marketing Assistant for Small Businesses</p>
+
+                    <input
+                        type="text"
+                        placeholder="Business Type (e.g. Bakery)"
+                        value={businessType}
+                        onChange={(e) => setBusinessType(e.target.value)}
+                        style={styles.input}
+                        disabled={loading}
+                    />
+
+                    <input
+                        type="text"
+                        placeholder="Offer Details (e.g. 20% Discount)"
+                        value={offer}
+                        onChange={(e) => setOffer(e.target.value)}
+                        style={styles.input}
+                        disabled={loading}
+                    />
+
+                    <select
+                        value={language}
+                        onChange={(e) => setLanguage(e.target.value)}
+                        style={styles.input}
+                        disabled={loading}
+                    >
+                        <option>Hindi</option>
+                        <option>Marathi</option>
+                        <option>Gujarati</option>
+                        <option>Tamil</option>
+                    </select>
+
+                    <button 
+                        onClick={handleGenerate} 
+                        style={{
+                            ...styles.button,
+                            opacity: loading ? 0.6 : 1,
+                            cursor: loading ? 'not-allowed' : 'pointer'
+                        }}
+                        disabled={loading}
+                    >
+                        {loading ? 'Generating...' : 'Generate Content'}
+                    </button>
+
+                    {error && (
+                        <div style={styles.error}>
+                            <p style={styles.errorText}>⚠️ {error}</p>
+                            <p style={styles.errorHint}>
+                                Make sure to run: <code>node localbrandai-backend/server-simple.js</code>
+                            </p>
+                        </div>
+                    )}
+
+                    {result && (
+                        <div style={styles.result}>
+                            <h3 style={styles.resultTitle}>✨ Generated Caption:</h3>
+                            <p style={styles.resultText}>{result}</p>
+                            <button 
+                                onClick={() => navigator.clipboard.writeText(result)}
+                                style={styles.copyButton}
+                            >
+                                📋 Copy to Clipboard
+                            </button>
+                        </div>
+                    )}
+
+                    <div style={styles.footer}>
+                        <p style={styles.footerText}>
+                            {loading ? '🔄 Connecting to backend...' : '✅ Ready to generate'}
+                        </p>
+                    </div>
+                </div>
+            );
+        }
+
+        const styles = {
+            container: {
+                maxWidth: "500px",
+                margin: "20px",
+                padding: "40px",
+                textAlign: "center",
+                fontFamily: "Arial, sans-serif",
+                backgroundColor: "white",
+                borderRadius: "20px",
+                boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
+            },
+            title: {
+                fontSize: "2.5em",
+                margin: "0 0 10px 0",
+                color: "#333",
+            },
+            subtitle: {
+                color: "#666",
+                marginBottom: "30px",
+                fontSize: "1.1em",
+            },
+            input: {
+                width: "100%",
+                padding: "15px",
+                margin: "10px 0",
+                border: "2px solid #e0e0e0",
+                borderRadius: "10px",
+                fontSize: "16px",
+                boxSizing: "border-box",
+                transition: "border-color 0.3s",
+            },
+            button: {
+                width: "100%",
+                padding: "15px 20px",
+                marginTop: "20px",
+                backgroundColor: "#667eea",
+                color: "white",
+                border: "none",
+                borderRadius: "10px",
+                cursor: "pointer",
+                fontSize: "18px",
+                fontWeight: "bold",
+                transition: "background-color 0.3s",
+            },
+            error: {
+                marginTop: "20px",
+                padding: "20px",
+                backgroundColor: "#fee",
+                borderRadius: "10px",
+                border: "2px solid #fcc",
+            },
+            errorText: {
+                margin: "0 0 10px 0",
+                color: "#c00",
+                fontWeight: "bold",
+            },
+            errorHint: {
+                margin: 0,
+                fontSize: "14px",
+                color: "#666",
+            },
+            result: {
+                marginTop: "30px",
+                padding: "20px",
+                backgroundColor: "#f8f9fa",
+                borderRadius: "10px",
+                border: "2px solid #667eea",
+            },
+            resultTitle: {
+                margin: "0 0 10px 0",
+                color: "#667eea",
+            },
+            resultText: {
+                margin: "0 0 15px 0",
+                fontSize: "16px",
+                color: "#333",
+                lineHeight: "1.6",
+            },
+            copyButton: {
+                padding: "10px 20px",
+                backgroundColor: "#28a745",
+                color: "white",
+                border: "none",
+                borderRadius: "8px",
+                cursor: "pointer",
+                fontSize: "14px",
+            },
+            footer: {
+                marginTop: "30px",
+                paddingTop: "20px",
+                borderTop: "1px solid #e0e0e0",
+            },
+            footerText: {
+                margin: 0,
+                fontSize: "14px",
+                color: "#999",
+            },
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
