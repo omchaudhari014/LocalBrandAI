@@ -1,213 +1,261 @@
-# 🚀 LocalBrandAI
+# LocalBrandAI 🚀
 
-**AI Marketing Assistant for Small Businesses in India**
+**AI Marketing Assistant for Local Indian Businesses**  
+Team: **INDIA RUNS 4** | Leader: **Om Chaudhari**
 
-Generate engaging social media content in multiple Indian languages.
+LocalBrandAI is a mobile-first AI-powered marketing assistant that helps small Indian businesses generate ready-to-share promotional campaigns in regional languages. A shop owner enters simple details like business name, offer, target audience, language, platform, and tone. The app generates captions, WhatsApp messages, Instagram captions, hashtags, voice-ad scripts, and downloadable promotional posters.
 
----
+## Live Links
 
-## 🎯 Three Versions Available
+- Frontend: https://local-brand-ai-jet.vercel.app
+- Backend: https://localbrandai.onrender.com
+- Backend health check: https://localbrandai.onrender.com/health
 
-### 1. 🟢 Simple Version (Recommended for Testing)
-- **No AWS or Database required!**
-- Works immediately after installing Node.js
-- Perfect for quick testing
-- **Files:** `server-simple.js` + `index-with-api.html`
-- **Guide:** [RUN_SIMPLE_VERSION.md](RUN_SIMPLE_VERSION.md)
+## Problem Statement
 
-### 2. 🔵 Database Version (Save Your Content)
-- **Includes MongoDB database**
-- Save and view history of generated content
-- Statistics dashboard
-- **Files:** `server-with-db.js` + `index-with-database.html`
-- **Guide:** [DATABASE_SETUP.md](DATABASE_SETUP.md)
+Small local businesses often struggle with digital marketing because they do not have time, writing confidence, design skills, or access to professional marketing tools. Many tools are English-first and too complex for small shop owners.
 
-### 3. 🟣 Full Version (Production Ready with AI)
-- Requires AWS Bedrock account
-- Real AI-powered content generation
-- Multi-language support with Claude AI
-- **Files:** `server.js` + AWS credentials
-- **Guide:** [INSTALLATION_GUIDE.md](INSTALLATION_GUIDE.md)
+## Solution
 
----
+LocalBrandAI converts basic business inputs into practical marketing assets:
 
-## ⚡ Quick Start (Simple Version)
+- Short marketing caption
+- WhatsApp promotional message
+- Instagram caption with hashtags
+- Regional-language voice advertisement script
+- Downloadable promotional poster
+- Campaign history and analytics dashboard
 
-### Step 1: Install Node.js
-Download from: **https://nodejs.org/** (LTS version)
+## Key Features
 
-### Step 2: Install Dependencies
-```powershell
-cd localbrandai-backend
-npm install express cors
-```
+- ✅ Mobile-first React interface
+- ✅ Node.js + Express backend
+- ✅ Smart mock AI fallback
+- ✅ Gemini API-ready backend integration
+- ✅ Regional language support: English, Hindi, Marathi, Gujarati, Tamil
+- ✅ Voice playback using browser SpeechSynthesis
+- ✅ Downloadable poster generated using HTML Canvas
+- ✅ WhatsApp sharing
+- ✅ Campaign history storage
+- ✅ Analytics dashboard
+- ✅ Deployment-ready for Vercel + Render
 
-### Step 3: Start Backend
-```powershell
-node server-simple.js
-```
-Or double-click: `localbrandai-backend/start-simple.bat`
+## Tech Stack
 
-### Step 4: Open Frontend
-Open `index-with-api.html` in your browser
+### Frontend
+- React.js
+- Vite
+- CSS
+- Lucide React icons
+- Browser SpeechSynthesis API
+- HTML Canvas poster generation
 
-**That's it!** 🎉
-
----
-
-## 📁 Project Structure
-
-```
-om1/
-├── index.html                      # Standalone frontend (demo)
-├── index-with-api.html            # Frontend with API integration
-├── localbrandai-backend/
-│   ├── server-simple.js           # Simple backend (no AWS)
-│   ├── server.js                  # Full backend (with AWS)
-│   ├── start-simple.bat           # Easy start script
-│   └── package.json               # Dependencies
-├── RUN_SIMPLE_VERSION.md          # Simple version guide
-├── INSTALLATION_GUIDE.md          # Full version guide
-└── README.md                      # This file
-```
-
----
-
-## 🎨 Features
-
-### Current Features
-- ✅ Multi-language support (Hindi, Marathi, Gujarati, Tamil)
-- ✅ Beautiful, responsive UI
-- ✅ RESTful API
-- ✅ Copy to clipboard
-- ✅ Error handling
-- ✅ Loading states
-
-### Full Version Only
-- 🤖 AI-powered content generation (AWS Bedrock)
-- 🎯 Culturally appropriate content
-- 🌟 Advanced language models (Claude 3)
-
----
-
-## 🛠️ Technology Stack
-
-**Frontend:**
-- React 18
-- Vanilla JavaScript
-- CSS3 with gradients
-
-**Backend:**
+### Backend
 - Node.js
 - Express.js
-- CORS enabled
+- CORS
+- dotenv
+- UUID
+- JSON file storage
+- Gemini API-ready AI service
 
-**AI (Full Version):**
-- AWS Bedrock
-- Claude 3 Sonnet
+## Folder Structure
 
----
-
-## 📚 Documentation
-
-- **[RUN_SIMPLE_VERSION.md](RUN_SIMPLE_VERSION.md)** - Quick start guide (no AWS)
-- **[INSTALLATION_GUIDE.md](INSTALLATION_GUIDE.md)** - Full version setup
-- **[localbrandai-backend/README.md](localbrandai-backend/README.md)** - Backend API docs
-
----
-
-## 🆘 Troubleshooting
-
-### "npm is not recognized"
-→ Install Node.js from https://nodejs.org/ and restart computer
-
-### "Cannot find module 'express'"
-→ Run `npm install express cors` in `localbrandai-backend` folder
-
-### "Failed to connect to server"
-→ Make sure backend is running (should see "Server running on port 5000")
-
-### "Port 5000 already in use"
-→ Change port in `server-simple.js` or stop other programs using port 5000
-
----
-
-## 🔄 Switching Between Versions
-
-### Use Simple Version:
-```powershell
-cd localbrandai-backend
-node server-simple.js
-```
-Open: `index-with-api.html`
-
-### Use Full Version:
-```powershell
-cd localbrandai-backend
-node server.js
-```
-Configure `.env` with AWS credentials first!
-
----
-
-## 🚀 Deployment
-
-### Simple Version
-- Can be deployed to any Node.js hosting (Heroku, Railway, Render)
-- No special configuration needed
-
-### Full Version
-- Requires AWS credentials as environment variables
-- Use AWS Lambda + API Gateway for serverless
-- Or deploy to EC2, ECS, or any Node.js hosting
-
----
-
-## 📊 API Endpoints
-
-### Simple Version
-```
-POST /generate
-Body: { businessType, offer, language }
-Response: { message: "generated caption" }
+```text
+LocalBrandAI/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Analytics.jsx
+│   │   │   ├── CampaignForm.jsx
+│   │   │   ├── Header.jsx
+│   │   │   ├── HistoryCard.jsx
+│   │   │   ├── Loader.jsx
+│   │   │   └── ResultCard.jsx
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend/
+│   ├── controllers/
+│   ├── routes/
+│   ├── services/
+│   │   ├── aiService.js
+│   │   ├── storageService.js
+│   │   ├── translationService.js
+│   │   └── voiceService.js
+│   ├── data/
+│   │   └── campaigns.json
+│   ├── server.js
+│   ├── package.json
+│   └── .env.example
+│
+├── screenshots/
+├── README.md
+└── .gitignore
 ```
 
-### Full Version
-```
+## API Documentation
+
+### Health Check
+
+```http
 GET /health
-POST /api/generate
-POST /api/generate-image-prompt
 ```
 
----
+### Generate Campaign
 
-## 🎓 Next Steps
+```http
+POST /api/generate
+```
 
-1. ✅ Test with simple version
-2. ✅ Verify everything works
-3. ✅ Get AWS Bedrock access
-4. ✅ Configure AWS credentials
-5. ✅ Switch to full version
-6. ✅ Deploy to production
+Request body:
 
----
+```json
+{
+  "businessName": "Raj Fashion",
+  "businessType": "Clothing Store",
+  "offer": "Flat 50% off on festive wear",
+  "targetAudience": "college students and families",
+  "language": "Marathi",
+  "platform": "WhatsApp",
+  "tone": "Festive"
+}
+```
 
-## 🔐 Security Notes
+### Get Campaigns
 
-- Never commit `.env` file
-- Keep AWS credentials secure
-- Use environment variables in production
-- Implement rate limiting
-- Add authentication for production use
+```http
+GET /api/campaigns
+```
 
----
+### Delete Campaign
 
-## 📄 License
+```http
+DELETE /api/campaigns/:id
+```
 
-ISC
+## How to Run Locally
 
----
+### Backend
 
-## 🎉 Made for AWS AI for Bharat Hackathon 🇮🇳
+```bash
+cd backend
+npm install
+npm run dev
+```
 
-**Start with the simple version, then upgrade to full AI power!**
+Backend will run on:
+
+```text
+http://localhost:5000
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend will run on:
+
+```text
+http://localhost:5173
+```
+
+## Environment Variables
+
+### Backend `.env`
+
+Copy `backend/.env.example` to `backend/.env`.
+
+```env
+PORT=5000
+FRONTEND_URLS=http://localhost:5173,https://local-brand-ai-jet.vercel.app
+GEMINI_API_KEY=
+GEMINI_MODEL=gemini-1.5-flash
+```
+
+If `GEMINI_API_KEY` is empty, the app automatically uses the smart mock campaign generator.
+
+### Frontend `.env`
+
+For local development:
+
+```env
+VITE_API_BASE_URL=http://localhost:5000
+```
+
+For deployed frontend on Vercel:
+
+```env
+VITE_API_BASE_URL=https://localbrandai.onrender.com
+```
+
+## Deployment
+
+### Backend on Render
+
+- Root directory: `backend`
+- Build command: `npm install`
+- Start command: `npm start`
+- Add environment variables:
+  - `FRONTEND_URLS=https://local-brand-ai-jet.vercel.app`
+  - `GEMINI_API_KEY=your_key_here` optional
+
+### Frontend on Vercel
+
+- Root directory: `frontend`
+- Build command: `npm run build`
+- Output directory: `dist`
+- Add environment variable:
+  - `VITE_API_BASE_URL=https://localbrandai.onrender.com`
+
+## Future Scope
+
+- Real voice MP3 generation using Amazon Polly or Google Text-to-Speech
+- Poster templates with AI image generation
+- MongoDB campaign storage
+- Login and business profiles
+- Campaign performance analytics
+- Instagram/Facebook direct posting integrations
+- PWA support for small shop owners
+
+## Hackathon Fit
+
+LocalBrandAI fits the AI for Bharat theme by solving a real daily problem for small businesses using simple, practical, regional-language AI.
+
+## V2 Upgrade Features
+
+- Login and registration with secure password hashing using Node crypto
+- Platform-specific output: Instagram shows Instagram caption + hashtags, WhatsApp shows only WhatsApp message, Facebook shows only Facebook post
+- Dark theme toggle with glassmorphism UI
+- Poster preview modal before download
+- PWA support with manifest and service worker
+- Mobile-first responsive UI
+
+### New API Routes
+
+```txt
+POST /api/auth/register
+POST /api/auth/login
+GET  /api/auth/me
+```
+
+### PWA Notes
+
+After deployment, open the Vercel link on mobile and use **Add to Home Screen** to install LocalBrandAI like an app.
+
+## Latest UI Upgrade
+
+- Removed hero feature pills and moved feature highlights into a polished footer feature section.
+- Improved light theme contrast so text remains readable.
+- Added animated AI orb, floating UI cards, mesh background, and soft morphing gradients.
+- Added cleaner glassmorphism cards and bento-style feature layout.
+- Poster preview, PWA, login/register, platform-specific output, voice playback, and analytics remain supported.

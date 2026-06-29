@@ -1,0 +1,94 @@
+[
+  {
+    "id": "3f426e24-c851-4a15-b002-f5de60461900",
+    "input": {
+      "businessName": "butterfly fashion",
+      "businessType": "Clothing Store",
+      "offer": "Flat 50% off on festive wear",
+      "targetAudience": "college students and families",
+      "language": "English",
+      "platform": "Instagram",
+      "tone": "Friendly"
+    },
+    "output": {
+      "shortCaption": "🎉 butterfly fashion brings you Flat 50% off on festive wear! Perfect for college students and families.",
+      "whatsappMessage": "Hi! butterfly fashion, your trusted Clothing Store, has a special offer: Flat 50% off on festive wear. Perfect for college students and families. Visit today!",
+      "instagramCaption": "✨ butterfly fashion is here with Flat 50% off on festive wear!\n\nMade for college students and families. Visit now and support your local Clothing Store.\n\n#LocalBusiness #ShopLocal #SpecialOffer #IndiaBusiness",
+      "facebookPost": "Great news from butterfly fashion! We are offering Flat 50% off on festive wear for college students and families. Visit our Clothing Store today and enjoy this limited-time deal.",
+      "hashtags": [
+        "#LocalBusiness",
+        "#ShopLocal",
+        "#SpecialOffer",
+        "#IndiaBusiness"
+      ],
+      "voiceScript": "Big news! butterfly fashion is offering Flat 50% off on festive wear. Perfect for college students and families. Visit today and grab this offer before it ends!",
+      "callToAction": "DM us today!",
+      "posterHeadline": "Flat 50% off on festive wear",
+      "posterSubtext": "butterfly fashion • Clothing Store",
+      "meta": {
+        "generatedBy": "Smart Mock AI Template Engine",
+        "language": "English",
+        "platform": "Instagram",
+        "tone": "Friendly",
+        "businessType": "Clothing Store"
+      },
+      "selectedContent": {
+        "platform": "Instagram",
+        "label": "Instagram Caption",
+        "text": "✨ butterfly fashion is here with Flat 50% off on festive wear!\n\nMade for college students and families. Visit now and support your local Clothing Store.\n\n#LocalBusiness #ShopLocal #SpecialOffer #IndiaBusiness"
+      },
+      "voice": {
+        "script": "Big news! butterfly fashion is offering Flat 50% off on festive wear. Perfect for college students and families. Visit today and grab this offer before it ends!",
+        "audioStatus": "script-ready",
+        "note": "Actual MP3 generation can be added with AWS Polly later."
+      }
+    },
+    "createdAt": "2026-06-29T09:15:08.955Z"
+  },
+  {
+    "id": "8097c7c6-918b-4ca1-9d5e-c6ba7d84a4d6",
+    "input": {
+      "businessName": "butterfly fashion",
+      "businessType": "Clothing Store",
+      "offer": "Flat 50% off on festive wear",
+      "targetAudience": "college students and families",
+      "language": "Marathi",
+      "platform": "Instagram",
+      "tone": "Festive"
+    },
+    "output": {
+      "shortCaption": "🎉 butterfly fashion मध्ये Flat 50% off on festive wear! college students and families साठी खास संधी.",
+      "whatsappMessage": "नमस्कार! butterfly fashion (Clothing Store) घेऊन आले आहे Flat 50% off on festive wear. college students and families साठी उत्तम ऑफर. आजच भेट द्या आणि ऑफरचा लाभ घ्या!",
+      "instagramCaption": "✨ butterfly fashion मध्ये जबरदस्त ऑफर: Flat 50% off on festive wear!\n\ncollege students and families साठी खास. आपल्या लोकल बिझनेसला सपोर्ट करा.\n\n#LocalBusiness #Maharashtra #Offer #ShopLocal",
+      "facebookPost": "butterfly fashion कडून college students and families साठी खास ऑफर: Flat 50% off on festive wear. आजच भेट द्या आणि ऑफरचा लाभ घ्या.",
+      "hashtags": [
+        "#LocalBusiness",
+        "#Maharashtra",
+        "#Offer",
+        "#ShopLocal"
+      ],
+      "voiceScript": "मोठी आनंदाची बातमी! butterfly fashion मध्ये Flat 50% off on festive wear. college students and families साठी ही खास संधी आहे. आजच भेट द्या आणि ऑफरचा लाभ घ्या!",
+      "callToAction": "आत्ताच संपर्क करा!",
+      "posterHeadline": "Flat 50% off on festive wear",
+      "posterSubtext": "butterfly fashion • Clothing Store",
+      "meta": {
+        "generatedBy": "Smart Mock AI Template Engine",
+        "language": "Marathi",
+        "platform": "Instagram",
+        "tone": "Festive",
+        "businessType": "Clothing Store"
+      },
+      "selectedContent": {
+        "platform": "Instagram",
+        "label": "Instagram Caption",
+        "text": "✨ butterfly fashion मध्ये जबरदस्त ऑफर: Flat 50% off on festive wear!\n\ncollege students and families साठी खास. आपल्या लोकल बिझनेसला सपोर्ट करा.\n\n#LocalBusiness #Maharashtra #Offer #ShopLocal"
+      },
+      "voice": {
+        "script": "मोठी आनंदाची बातमी! butterfly fashion मध्ये Flat 50% off on festive wear. college students and families साठी ही खास संधी आहे. आजच भेट द्या आणि ऑफरचा लाभ घ्या!",
+        "audioStatus": "script-ready",
+        "note": "Actual MP3 generation can be added with AWS Polly later."
+      }
+    },
+    "createdAt": "2026-06-29T09:14:45.941Z"
+  }
+]

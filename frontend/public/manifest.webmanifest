@@ -1,0 +1,12 @@
+{
+  "name": "LocalBrandAI",
+  "short_name": "LocalBrandAI",
+  "description": "AI marketing assistant for local Indian businesses",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#4f46e5",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
